@@ -76,20 +76,22 @@ get_breadcrumbs = function (url) {
   }
   return rtn;
 };
-app.use(function (req, res, next) {
-  req.breadcrumbs = get_breadcrumbs(req.originalUrl);
-  next();
-});
+// app.use(function (req, res, next) {
+//   req.breadcrumbs = get_breadcrumbs(req.originalUrl);
+//   next();
+// });
 
 //routes config
 const indexRouter = require("./routes/index");
 const productsRouter = require("./routes/products");
 const usersRouter = require("./routes/user");
 const pagesRouter = require("./routes/pages");
+const testDataRouter = require("./routes/testData");
 app.use("/products", productsRouter);
 app.use("/user", usersRouter);
-app.use("/pages", pagesRouter);
+app.use("/testData", testDataRouter);
 app.use("/", indexRouter);
+app.use("/pages", pagesRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
