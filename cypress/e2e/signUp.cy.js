@@ -8,7 +8,7 @@ describe('Sign Up', () => {
     it('Check the required fields by not filling any data', function () {
       cy.get('h1').should('contain', 'Sign Up Page')
       cy.get('[type="submit"]').click()
-      cy.get('h1').should('contain', 'Sign Up Page')
+      cy.contains('Please fill out this field.').should('exist')
     })
     it('Check user should Register by filling all the required fields', function () {
       cy.task('signup:prepare', this.signUpData.email)
