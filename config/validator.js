@@ -4,10 +4,8 @@ const userSignUpValidationRules = () => {
   return [
     check("name", "Name is required").not().isEmpty(),
     check("email", "Invalid email").not().isEmpty().isEmail(),
-    check("password", "Please enter a password with 4 or more characters")
-      .not()
-      .isEmpty()
-      .isLength({ min: 4 }),
+    check("password", "Password should be combination of one uppercase , one lower case, one special char, one digit and min 8 , max 32 char long")
+      .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$#!%*?&])[A-Za-z\d#@$!%*?&]{8,32}$/),
   ];
 };
 

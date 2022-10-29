@@ -1,6 +1,23 @@
 {
   "name": "Test User",
-  "email": "test@gmail.com",
-  "password": "Pass123456",
-  "wrongPassword": "Pass123456"
+  "validEmails": [
+    "test@gmail.com",
+    "test.22@gmail.com"
+  ],
+  "wrongEmails": [
+    "testAtgmail.com",
+    "testgmailcom",
+    "@gmail.com",
+    "test@gmail"
+  ],
+  "password": "Pass123456!",
+  "wrongPasswords": [
+    "Pass!1",
+    "Any@Randomstringwithnumbers123456",
+    "Any@Randomstring",
+    "123456789@#",
+    "AnyRandomstring123",
+    "AAKSDJKSJ1@",
+    "anyrandomstring125#"
+  ]
 }
