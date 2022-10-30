@@ -135,3 +135,23 @@ All the models can be found in the models directory created using mongoose.
 - paymentId (String)
 - createdAt (Date)
 - Delivered (Boolean)
+
+# Testing with Cypress
+
+## Running test:
+- Running with UI: 
+  
+  `npm run cypress:open`
+
+- Running without UI: 
+
+  `npx cypress run --spec {spec-path or forder of specs path}`
+
+## Making HTML report:
+
+- Using [mochawesome](https://www.npmjs.com/package/mochawesome) Library
+
+- Command:
+
+  `npx cypress run cypress/e2e/signUp.cy.js -r mochawesome`
+

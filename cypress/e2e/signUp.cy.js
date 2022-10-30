@@ -57,7 +57,7 @@ describe('Sign Up', () => {
     })
   })
 
-  context.only('Password validation', () => {
+  context('Password validation', () => {
     beforeEach(function () {
       cy.task('signup:prepare', this.signUpData.validEmails[0])
     })
@@ -90,7 +90,7 @@ describe('Sign Up', () => {
     it('Check the password when passing without upper case', function () {
       checkPassword(this.signUpData, this.signUpData.wrongPasswords[6])
     })
-    it.only('Check the password and confirm password is not match', function () {
+    it('Check the password and confirm password is not match', function () {
       cy.task('signup:prepare', this.signUpData.validEmails[0])
       cy.getByID('name').type(this.signUpData.name)
       cy.getByID('email').type(this.signUpData.validEmails[0])
