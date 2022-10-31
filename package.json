@@ -5,7 +5,8 @@
   "description": "A virtual ecommerce website using Node js, Express js, and Mongoose.",
   "scripts": {
     "start": "nodemon app.js",
-    "cypress:open": "npx cypress open"
+    "cypress:open": "npx cypress open",
+    "cypress:report": "npx cypress run -r mochawesome"
   },
   "author": "Maryam Aljanabi",
   "license": "MIT",

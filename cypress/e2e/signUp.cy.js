@@ -1,8 +1,10 @@
 describe('Sign Up', () => {
   var signUpURL = '/user/signup'
   beforeEach(function () {
-    cy.visit(signUpURL)
     cy.fixture('signUp.json').as('signUpData')
+  })
+  beforeEach(function () {
+    cy.visit(signUpURL)
   })
   context('Required fields', () => {
     it('Check the required fields by not filling any data', function () {
@@ -91,7 +93,6 @@ describe('Sign Up', () => {
       checkPassword(this.signUpData, this.signUpData.wrongPasswords[6])
     })
     it('Check the password and confirm password is not match', function () {
-      cy.task('signup:prepare', this.signUpData.validEmails[0])
       cy.getByID('name').type(this.signUpData.name)
       cy.getByID('email').type(this.signUpData.validEmails[0])
       cy.getByID('password').type(this.signUpData.password)

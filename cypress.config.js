@@ -19,6 +19,11 @@ module.exports = defineConfig({
           const { data } = await axios.post(`${testDataApiEndpoint}/pre_signup`, { email: email })
           return data
         },
+        async "makeTestAccount"(userInfo) {
+          console.log("🚀 ~ file: cypress.config.js ~ line 23 ~ setupNodeEvents ~ userInfo", userInfo)
+          const { data } = await axios.post(`${testDataApiEndpoint}/make_test_account`, { name: userInfo.name, email: userInfo.email, password: userInfo.password })
+          return data
+        },
       });
     },
   },
