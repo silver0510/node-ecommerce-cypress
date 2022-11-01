@@ -28,3 +28,10 @@
 Cypress.Commands.add('getByID', (id, options) => {
     return cy.get(`[id="${id}"]`)
 })
+
+Cypress.Commands.add('login', (email, password, options) => {
+    cy.visit('/user/signin')
+    cy.getByID('email').type(email)
+    cy.getByID('password').type(password)
+    cy.get('[type="submit"]').click()
+})

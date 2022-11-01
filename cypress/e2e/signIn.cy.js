@@ -32,10 +32,8 @@ describe('Sign In', () => {
       cy.get('[type="submit"]').click()
       cy.contains("Wrong password")
     })
-    it('Check when pass correct email and password', function () {
-      cy.getByID('email').type(this.signInData.email)
-      cy.getByID('password').type(this.signInData.password)
-      cy.get('[type="submit"]').click()
+    it.only('Check when pass correct email and password', function () {
+      cy.login(this.signInData.email, this.signInData.password)
       cy.contains("Test User")
     })
   })
